@@ -1,6 +1,8 @@
-create database graph;
-use graph;
-set names utf8;
+CREATE DATABASE graph
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+USE graph;
+SET NAMES utf8;
 
 DROP TABLE if exists `graph`.`endpoint`;
 CREATE TABLE `graph`.`endpoint` (
@@ -11,7 +13,7 @@ CREATE TABLE `graph`.`endpoint` (
   `t_modify` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_endpoint` (`endpoint`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE if exists `graph`.`endpoint_counter`;
 CREATE TABLE `graph`.`endpoint_counter` (
@@ -25,7 +27,7 @@ CREATE TABLE `graph`.`endpoint_counter` (
   `t_modify` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_endpoint_id_counter` (`endpoint_id`, `counter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE if exists `graph`.`tag_endpoint`;
 CREATE TABLE `graph`.`tag_endpoint` (
@@ -37,5 +39,5 @@ CREATE TABLE `graph`.`tag_endpoint` (
   `t_modify` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_tag_endpoint_id` (`tag`, `endpoint_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
