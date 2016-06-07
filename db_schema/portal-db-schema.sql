@@ -24,7 +24,7 @@ CREATE TABLE host
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 /**
@@ -43,7 +43,7 @@ CREATE TABLE `grp` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 DROP TABLE IF EXISTS grp_host;
@@ -56,7 +56,7 @@ CREATE TABLE grp_host
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 /**
@@ -78,7 +78,7 @@ CREATE TABLE tpl
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 DROP TABLE IF EXISTS strategy;
@@ -100,7 +100,7 @@ CREATE TABLE `strategy` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 DROP TABLE IF EXISTS expression;
@@ -120,7 +120,7 @@ CREATE TABLE `expression` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 DROP TABLE IF EXISTS grp_tpl;
@@ -133,7 +133,7 @@ CREATE TABLE `grp_tpl` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 CREATE TABLE `plugin_dir` (
   `id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -146,7 +146,7 @@ CREATE TABLE `plugin_dir` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 
 DROP TABLE IF EXISTS action;
@@ -163,7 +163,7 @@ CREATE TABLE `action` (
 )
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
+  COLLATE =utf8_general_ci;
 
 /**
  * nodata mock config
@@ -185,9 +185,9 @@ CREATE TABLE `mockcfg` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_name` (`name`)
 )
-  ENGINE=InnoDB
-  DEFAULT CHARSET=utf8
-  COLLATE=utf8_unicode_ci;
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8
+  COLLATE =utf8_general_ci;
 
 /**
  *  aggregator cluster metric config table
@@ -208,5 +208,5 @@ CREATE TABLE `cluster` (
   PRIMARY KEY (`id`)
 )
   ENGINE =InnoDB
-  DEFAULT CHARSET=utf8
-  COLLATE=utf8_unicode_ci;
+  DEFAULT CHARSET =utf8
+  COLLATE =utf8_general_ci;
