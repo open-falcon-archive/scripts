@@ -13,7 +13,7 @@ CREATE TABLE `team` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_team_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 /**
  * role: -1:blocked 0:normal 1:admin 2:root
@@ -33,7 +33,7 @@ CREATE TABLE `user` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_user_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 DROP TABLE if exists `rel_team_user`;
 CREATE TABLE `rel_team_user` (
@@ -43,7 +43,7 @@ CREATE TABLE `rel_team_user` (
   PRIMARY KEY (`id`),
   KEY `idx_rel_tid` (`tid`),
   KEY `idx_rel_uid` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 DROP TABLE if exists `session`;
 CREATE TABLE `session` (
@@ -54,7 +54,7 @@ CREATE TABLE `session` (
   PRIMARY KEY (`id`),
   KEY `idx_session_uid` (`uid`),
   KEY `idx_session_sig` (`sig`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 /*900150983cd24fb0d6963f7d28e17f72*/
 /*insert into `user`(`name`, `passwd`, `role`, `created`) values('root', md5('abc'), 2, now());*/

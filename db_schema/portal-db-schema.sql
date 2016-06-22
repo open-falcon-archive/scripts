@@ -21,10 +21,7 @@ CREATE TABLE host
   update_at      TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY idx_host_hostname (hostname)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 /**
  * 机器分组信息
@@ -39,10 +36,7 @@ CREATE TABLE `grp` (
   come_from   TINYINT(4)       NOT NULL DEFAULT '0',
   PRIMARY KEY (id),
   UNIQUE KEY idx_host_grp_grp_name (grp_name)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 DROP TABLE IF EXISTS grp_host;
 CREATE TABLE grp_host
@@ -51,10 +45,7 @@ CREATE TABLE grp_host
   host_id INT UNSIGNED NOT NULL,
   KEY idx_grp_host_grp_id (grp_id),
   KEY idx_grp_host_host_id (host_id)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 /**
  * 监控策略模板
@@ -72,10 +63,7 @@ CREATE TABLE tpl
   PRIMARY KEY (id),
   UNIQUE KEY idx_tpl_name (tpl_name),
   KEY idx_tpl_create_user (create_user)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 DROP TABLE IF EXISTS strategy;
 CREATE TABLE `strategy` (
@@ -93,10 +81,7 @@ CREATE TABLE `strategy` (
   `tpl_id`      INT(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `idx_strategy_tpl_id` (`tpl_id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 DROP TABLE IF EXISTS expression;
 CREATE TABLE `expression` (
@@ -112,10 +97,7 @@ CREATE TABLE `expression` (
   `create_user` VARCHAR(64)      NOT NULL DEFAULT '',
   `pause`       TINYINT(1)       NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 DROP TABLE IF EXISTS grp_tpl;
 CREATE TABLE `grp_tpl` (
@@ -124,10 +106,7 @@ CREATE TABLE `grp_tpl` (
   `bind_user` VARCHAR(64)      NOT NULL DEFAULT '',
   KEY `idx_grp_tpl_grp_id` (`grp_id`),
   KEY `idx_grp_tpl_tpl_id` (`tpl_id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 CREATE TABLE `plugin_dir` (
   `id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -137,10 +116,7 @@ CREATE TABLE `plugin_dir` (
   `create_at`   TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_plugin_dir_grp_id` (`grp_id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 DROP TABLE IF EXISTS action;
 CREATE TABLE `action` (
@@ -153,10 +129,7 @@ CREATE TABLE `action` (
   `after_callback_sms`   TINYINT(4)       NOT NULL DEFAULT '0',
   `after_callback_mail`  TINYINT(4)       NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 /**
  * nodata mock config
@@ -177,10 +150,7 @@ CREATE TABLE `mockcfg` (
   `t_modify` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_name` (`name`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
 
 /**
  *  aggregator cluster metric config table
@@ -199,7 +169,4 @@ CREATE TABLE `cluster` (
   `last_update` TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `creator`     VARCHAR(255)   NOT NULL,
   PRIMARY KEY (`id`)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;

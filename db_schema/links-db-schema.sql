@@ -13,7 +13,4 @@ CREATE TABLE alert
   create_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY alert_path(path)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_general_ci;
+) ENGINE =InnoDB;
