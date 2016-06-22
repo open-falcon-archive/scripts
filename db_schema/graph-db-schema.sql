@@ -40,4 +40,3 @@ CREATE TABLE `graph`.`tag_endpoint` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_tag_endpoint_id` (`tag`, `endpoint_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-

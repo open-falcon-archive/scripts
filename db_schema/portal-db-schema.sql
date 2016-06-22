@@ -26,7 +26,6 @@ CREATE TABLE host
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
 
-
 /**
  * 机器分组信息
  * come_from 0: 从机器管理同步过来的；1: 从页面创建的
@@ -45,7 +44,6 @@ CREATE TABLE `grp` (
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
 
-
 DROP TABLE IF EXISTS grp_host;
 CREATE TABLE grp_host
 (
@@ -57,7 +55,6 @@ CREATE TABLE grp_host
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
-
 
 /**
  * 监控策略模板
@@ -80,7 +77,6 @@ CREATE TABLE tpl
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
 
-
 DROP TABLE IF EXISTS strategy;
 CREATE TABLE `strategy` (
   `id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -102,7 +98,6 @@ CREATE TABLE `strategy` (
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
 
-
 DROP TABLE IF EXISTS expression;
 CREATE TABLE `expression` (
   `id`          INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -121,7 +116,6 @@ CREATE TABLE `expression` (
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
-
 
 DROP TABLE IF EXISTS grp_tpl;
 CREATE TABLE `grp_tpl` (
@@ -147,7 +141,6 @@ CREATE TABLE `plugin_dir` (
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
-
 
 DROP TABLE IF EXISTS action;
 CREATE TABLE `action` (

@@ -4,7 +4,6 @@ CREATE DATABASE falcon_links
 USE falcon_links;
 SET NAMES utf8;
 
-
 DROP TABLE IF EXISTS alert;
 CREATE TABLE alert
 (
@@ -18,4 +17,3 @@ CREATE TABLE alert
   ENGINE =InnoDB
   DEFAULT CHARSET =utf8
   COLLATE =utf8_general_ci;
-

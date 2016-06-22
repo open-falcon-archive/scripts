@@ -58,4 +58,3 @@ CREATE TABLE `session` (
 
 /*900150983cd24fb0d6963f7d28e17f72*/
 /*insert into `user`(`name`, `passwd`, `role`, `created`) values('root', md5('abc'), 2, now());*/
-
