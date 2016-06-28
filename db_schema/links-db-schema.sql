@@ -4,7 +4,6 @@ CREATE DATABASE falcon_links
 USE falcon_links;
 SET NAMES utf8;
 
-
 DROP TABLE IF EXISTS alert;
 CREATE TABLE alert
 (
@@ -14,8 +13,4 @@ CREATE TABLE alert
   create_at TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY alert_path(path)
-)
-  ENGINE =InnoDB
-  DEFAULT CHARSET =utf8
-  COLLATE =utf8_unicode_ci;
-
+) ENGINE =InnoDB;
